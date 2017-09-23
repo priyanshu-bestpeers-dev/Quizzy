@@ -1,0 +1,75 @@
+<!-- <section>
+  <div class="page-header">
+    <h1>{{vm.quiz._id ? 'Edit Quiz' : 'New Quiz'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.quizForm" class="form-horizontal" ng-submit="vm.save(vm.form.quizForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Name</label>
+          <input name="name" type="text" ng-model="vm.quiz.name" id="name" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.quizForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Quiz name is required.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.quiz._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section> -->
+
+<section>
+  <div class="well well-sm page-header ">
+    <h1 class="text-center" style="color: black;">{{vm.quiz._id ? 'Edit Quiz' : 'New Quiz'}}</h1>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="well well-lg" style="background-image: url('/modules/core/client/img/home-img/bg-img4.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                color: white ;
+                box-shadow:50px 50px 20px black;">
+      <form name="vm.form.questionForm" class="form-horizontal" ng-submit="vm.save(vm.form.questionForm.$valid)" novalidate>
+        <fieldset>
+          <div class="form-group" show-errors>
+            <p class="lead text-center">Quiz Name</p>
+            <input name="quiz" type="text" ng-model="vm.quiz.name" id="quiz" class="form-control" placeholder="Enter Quiz Name" required>
+            <div ng-messages="vm.form.quizForm.quiz.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Quiz name is required.</p>
+            </div>
+          </div>
+          <p class="lead text-center">Add Questions</p>
+            <div ng-dropdown-multiselect="" options="example1data" selected-model="vm.quiz.questions" extra-settings="exampleSettings"></div>
+
+          <div class="checkbox">
+            <label><input type="checkbox"ng-model="vm.quiz.isMinusMarking" value="True">Allow Minus Marking </label>
+          </div>
+          <!-- <div class="form-group">
+            <p class="lead text-center">Select Difficulty Level</p>
+            <select ng-options="x.difficulty_level for x in vm.difficultyLevel" class="form-control" ng-model="vm.selected_difficulty_level"></select>
+          </div>
+          <div class="form-group">
+            <p class="lead text-center">Select Category</p>
+            <select ng-options="x.category for x in vm.categories" class="form-control" ng-model="vm.selected_category"></select>
+          </div> -->
+          <div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg">{{vm.quiz._id ? 'Update' : 'Create'}}</button>
+          </div>
+          <div ng-show="vm.error" class="text-danger">
+            <strong ng-bind="vm.error"></strong>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+</section>
+
+<br>
+<br>
+<br>

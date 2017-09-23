@@ -1,4 +1,4 @@
-(function () {
+(function() {
   'use strict';
 
   // Questions controller
@@ -8,7 +8,7 @@
 
   QuestionsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'questionResolve'];
 
-  function QuestionsController ($scope, $state, $window, Authentication, question) {
+  function QuestionsController($scope, $state, $window, Authentication, question) {
     var vm = this;
 
     vm.authentication = Authentication;

@@ -10,35 +10,40 @@ var mongoose = require('mongoose'),
  * Question Schema
  */
 var QuestionSchema = new Schema({
-      question: {
+  question: {
+    type: String,
+    default: '',
+    required: 'Please fill Question name',
+    trim: true
+  },
+  created: {
+    type: Date,
+    default: Date.now
+  },
+  user: {
+    type: Schema.ObjectId,
+    ref: 'User'
+  },
+  options: [{
+    option: {
       type: String,
       default: '',
-      required: 'Please fill Question name',
       trim: true
-      },
-      created: {
-      type: Date,
-      default: Date.now
-      },
-      user: {
-      type: Schema.ObjectId,
-      ref: 'User'
-      },
-      options:[
-      {
-      type: String
-      }],
-      answer: {
-        type: [{
-          type: Number
-        }]
-      },
-      category:{
-      type: String
-      },
-      difficulty: {
-      type: String
-      }
+    },
+    isCorrect: {
+      type: Boolean,
+      default: false
+    }
+  }],
+  category: {
+    type: String
+  },
+  difficulty: {
+    type: String
+  },
+  questionType: {
+    type: String
+  }
 });
 
 mongoose.model('Question', QuestionSchema);

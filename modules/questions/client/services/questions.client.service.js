@@ -1,6 +1,6 @@
 // Questions service used to communicate Questions REST endpoints
 
-(function () {
+(function() {
   'use strict';
 
   angular
@@ -19,7 +19,7 @@
     });
 
     angular.extend(Question.prototype, {
-      createOrUpdate: function () {
+      createOrUpdate: function() {
         var question = this;
         return createOrUpdate(question);
       }

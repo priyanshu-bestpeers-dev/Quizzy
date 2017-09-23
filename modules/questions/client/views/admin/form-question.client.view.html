@@ -1,24 +1,81 @@
 <section>
-  <div class="page-header">
-    <h1>{{vm.question._id ? 'Edit Question' : 'New Question'}}</h1>
+  <div class="well well-sm page-header ">
+    <h1 class="text-center" style="color: black;">{{vm.question._id ? 'Edit Question' : 'New Question'}}</h1>
   </div>
-  <div class="col-md-12">
-    <form name="vm.form.questionForm" class="form-horizontal" ng-submit="vm.save(vm.form.questionForm.$valid)" novalidate>
-      <fieldset>
-        <div class="form-group" show-errors>
-          <label class="control-label" for="name">Name</label>
-          <input name="name" type="text" ng-model="vm.question.name" id="name" class="form-control" placeholder="Name" required>
-          <div ng-messages="vm.form.questionForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Question name is required.</p>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="well well-lg" style="background-image: url('/modules/core/client/img/home-img/bg-img4.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                color: white ;
+                box-shadow:5px 30px 30px 30px black;">
+      <form name="vm.form.questionForm" class="form-horizontal" ng-submit="vm.save(vm.form.questionForm.$valid)" novalidate>
+        <fieldset>
+          <div class="form-group" show-errors>
+            <p class="lead text-center">Question</p>
+            <input name="question" type="text" ng-model="vm.question.question" id="question" class="form-control" placeholder="Enter Question" required>
+            <div ng-messages="vm.form.questionForm.question.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Question name is required.</p>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.question._id ? 'Update' : 'Create'}}</button>
-        </div>
-        <div ng-show="vm.error" class="text-danger">
-          <strong ng-bind="vm.error"></strong>
-        </div>
-      </fieldset>
-    </form>
+          <div class="form-group">
+            <p class="lead text-center">Options</p>
+            <label class="control-label" for="option1">option 1</label>
+            <input name="option" data-ng-model="vm.option1.option" id="option1" class="form-control" cols="30" rows="10" placeholder="option1"></input>
+            <div class="checkbox">
+              <label><input type="checkbox"ng-model="vm.option1.isCorrect" value="True">Correct Answer</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="option2">option 2</label>
+            <input name="option2" data-ng-model="vm.option2.option" id="option2" class="form-control" cols="30" rows="10" placeholder="option2"></input>
+            <div class="checkbox">
+              <label><input type="checkbox"ng-model="vm.option2.isCorrect" value="True">Correct Answer</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="option3">option 3</label>
+            <input name="option" data-ng-model="vm.option3.option" id="option3" class="form-control" cols="30" rows="10" placeholder="option3"></input>
+            <div class="checkbox">
+              <label><input type="checkbox"ng-model="vm.option3.isCorrect" value="True">Correct Answer</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="option4">option 4</label>
+            <input name="option4" data-ng-model="vm.option4.option" id="option4" class="form-control" cols="30" rows="10" placeholder="option4"></input>
+            <div class="checkbox">
+              <label><input type="checkbox"ng-model="vm.option4.isCorrect" value="True">Correct Answer</label>
+            </div>
+          </div>
+          <!-- <div class="form-group">
+            <p class="lead text-center">Select Correct Answer(s)</p>
+            <select class="form-control" name="multipleSelect" id="multipleSelect" ng-model="vm.question.correct_answers" multiple>
+                                      <option value="0">Option 1</option>
+                                      <option value="1">Option 2</option>
+                                      <option value="2">Option 3</option>
+                                      <option value="3">Option 4</option>
+                                      </select>
+          </div> -->
+          <div class="form-group">
+            <p class="lead text-center">Select Difficulty Level</p>
+            <select ng-options="x.difficulty_level for x in vm.difficultyLevel" class="form-control" ng-model="vm.selected_difficulty_level"></select>
+          </div>
+          <div class="form-group">
+            <p class="lead text-center">Select Category</p>
+            <select ng-options="x.category for x in vm.categories" class="form-control" ng-model="vm.selected_category"></select>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg">{{vm.question._id ? 'Update' : 'Create'}}</button>
+          </div>
+          <div ng-show="vm.error" class="text-danger">
+            <strong ng-bind="vm.error"></strong>
+          </div>
+        </fieldset>
+      </form>
+    </div>
   </div>
+
 </section>
+
+<br>
+<br>
+<br>

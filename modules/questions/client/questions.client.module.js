@@ -1,9 +1,3 @@
-(function (app) {
-  'use strict';
-
-  app.registerModule('questions');
-}(ApplicationConfiguration));
-
 
 (function (app) {
   'use strict';

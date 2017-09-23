@@ -2,10 +2,8 @@
   <div class="page-header">
     <h1 ng-bind="vm.question.name"></h1>
   </div>
-  <div class="pull-right"
-       ng-show="vm.question.isCurrentUserOwner">
-    <a class="btn btn-primary"
-       ui-sref="questions.edit({ questionId: vm.question._id })">
+  <div class="pull-right" ng-show="vm.question.isCurrentUserOwner">
+    <a class="btn btn-primary" ui-sref="questions.edit({ questionId: vm.question._id })">
       <i class="glyphicon glyphicon-edit"></i>
     </a>
     <a class="btn btn-primary" ng-click="vm.remove()">

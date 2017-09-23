@@ -3,9 +3,7 @@
     <h1>Questions</h1>
   </div>
   <div class="list-group">
-    <a ng-repeat="question in vm.questions"
-       ui-sref="questions.view({ questionId: question._id })"
-       class="list-group-item">
+    <a ng-repeat="question in vm.questions" ui-sref="questions.view({ questionId: question._id })" class="list-group-item">
       <small class="list-group-item-text">
         Posted on
         <span ng-bind="question.created | date:'mediumDate'"></span>

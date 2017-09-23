@@ -13,8 +13,13 @@ var path = require('path'),
  * Create a Question
  */
 exports.create = function(req, res) {
+  console.log(req.body);
+  var option = req.body.options;
   var question = new Question(req.body);
   question.user = req.user;
+  // for(var i = 0; i < option.length ; i++){
+  //   question.options.push(option[i]);
+  // }
 
   question.save(function(err) {
     if (err) {

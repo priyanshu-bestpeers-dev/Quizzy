@@ -24,10 +24,17 @@ var QuizSchema = new Schema({
     type: Schema.ObjectId,
     ref: 'User'
   },
-  questions:[{
-    type:Schema.ObjectId,
+  questions: [{
+    type: Schema.ObjectId,
     ref: 'Question'
-  }]
+  }],
+  isMinusMarking: {
+    type: Boolean,
+    default: false
+  },
+  quizCategory: {
+    type: String
+  }
 });
 
 mongoose.model('Quiz', QuizSchema);
